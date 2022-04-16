@@ -93,7 +93,7 @@ export default {
       this.BankInterestRate = this.PickedBank.InterestRate;
     },
     GetMonthlyPayment() {
-      this.MonthlyPayment =
+      this.MonthlyPayment = 
         (this.InitialLoan *
           (this.BankInterestRate / 12) *
           Math.pow(

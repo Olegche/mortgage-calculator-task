@@ -30,7 +30,7 @@
     </label>
     <br>
 
-    <button @click="onAdd(),jumpToHomePage()">{{ buttonTitle }}</button>
+    <button @click="onAdd(), jumpToHomePage()">{{ buttonTitle }}</button>
   </div>
 </template>
 
@@ -91,7 +91,7 @@ export default {
         });
       else
         this.updateBankItemAction({
-          _id: parseInt(this.bankId),
+          _id:this.bankId,
           BankName,
           InterestRate,
           MaximumLoan,
