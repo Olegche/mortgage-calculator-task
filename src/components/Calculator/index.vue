@@ -108,15 +108,15 @@ export default {
     },
 
     CheckRequest() {
-      if (this.InitialLoan > this.PickedBank.MaximumLoan) {
+      if (parseInt(this.InitialLoan) > parseInt(this.PickedBank.MaximumLoan)) {
         this.Message = " Initial Loan is bigger then banks maximum loan ";
-      } else if (this.DownPayment < this.PickedBank.MinimumDownPayment) {
+      } else if (parseInt(this.DownPayment) < parseInt(this.PickedBank.MinimumDownPayment)) {
         this.Message = " Down payment is less then banks minimum down payment";
       } 
-      else if ( this.DownPayment > this.InitialLoan ) {
+      else if ( parseInt(this.DownPayment) > parseInt(this.InitialLoan) ) {
             this.Message = "Down payment is bigger than initial loan "; // fixed issue (Все супер, додай перевірки на down payment в calculator. Оскільки я зараз можу вставити число сильно більше ніж сам кредит і воно всеодно рахує. Дивно. )
       }
-        else if ( this.DownPayment > this.PickedBank.MaximumLoan  ) {
+        else if ( parseInt(this.DownPayment)  > parseInt(this.PickedBank.MaximumLoan)  ) {
             this.Message = "Down payment is bigger than banks maximum loan "; 
       }
       else  {

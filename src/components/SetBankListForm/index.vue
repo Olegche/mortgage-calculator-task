@@ -8,7 +8,7 @@
 
     <label>
       Interest Rate (0.1 means 10%)
-      <input type="number" placeholder="0.2" v-model="InterestRate" />
+      <input type="number" placeholder="0.2" step="0.01" min="0" max="1" v-model="InterestRate" />
     </label>
     <br>
 
@@ -72,7 +72,16 @@ export default {
   methods: {
     ...mapActions(["addNewBankAction", "updateBankItemAction"]),
 
+    parse(){
+        parseInt(
+        this.InterestRate,
+        this.MaximumLoan,
+        this.MinimumDownPayment,
+        this.LoanTerm,)
+    },
+
     onAdd() {
+        this.parse();
       const {
         BankName,
         InterestRate,
