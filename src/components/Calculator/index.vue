@@ -113,8 +113,11 @@ export default {
       } else if (this.DownPayment < this.PickedBank.MinimumDownPayment) {
         this.Message = " Down payment is less then banks minimum down payment";
       } 
-      else if (this.DownPayment > this.PickedBank.MaximumLoan || this.DownPayment > this.InitialLoan ) {
-            this.Message = " Down payment is bigger then banks maximum loan or Down payment is bigger than InitialLoan "; // fixed issue (Все супер, додай перевірки на down payment в calculator. Оскільки я зараз можу вставити число сильно більше ніж сам кредит і воно всеодно рахує. Дивно. )
+      else if ( this.DownPayment > this.InitialLoan ) {
+            this.Message = "Down payment is bigger than initial loan "; // fixed issue (Все супер, додай перевірки на down payment в calculator. Оскільки я зараз можу вставити число сильно більше ніж сам кредит і воно всеодно рахує. Дивно. )
+      }
+        else if ( this.DownPayment > this.PickedBank.MaximumLoan  ) {
+            this.Message = "Down payment is bigger than banks maximum loan "; 
       }
       else  {
         (this.Message = "Ok, now You can get your monthly payment"),
