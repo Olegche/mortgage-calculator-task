@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="wrap">
-      <p>BankName: {{ BankName }}</p>
-      <p>InterestRate: {{ InterestRate }}</p>
-      <p>MaximumLoan: {{ MaximumLoan }}</p>
-      <p>MinimumDownPayment: {{ MinimumDownPayment }}</p>
-      <p>LoanTerm: {{ LoanTerm }}</p>
+      <p class="tittleName"> BankName:  {{ BankName }}  </p>
+      <p >InterestRate: {{ InterestRate }}</p>
+      <p >MaximumLoan: {{ MaximumLoan }}</p>
+      <p >MinimumDownPayment: {{ MinimumDownPayment }}</p>
+      <p >LoanTerm: {{ LoanTerm }}</p>
       <!-- <p>{{_id}}</p> -->
       <button class="editBtn" @click="onEdit">Edit</button>
       <button class="deleteBtn" @click="onDelete">Delete</button>
@@ -99,4 +99,10 @@ export default {
     border: 1px solid rgb(226, 99, 53);
     border-radius: 10px;
 }
+.tittleName{
+    background-color: rgb(86, 177, 115);
+    border-radius: 10px;
+    color: #ffffff;
+}
+
 </style>

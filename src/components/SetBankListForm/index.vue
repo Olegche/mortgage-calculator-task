@@ -81,7 +81,7 @@ export default {
     },
 
     onAdd() {
-        this.parse();
+       
       const {
         BankName,
         InterestRate,
@@ -89,6 +89,7 @@ export default {
         MinimumDownPayment,
         LoanTerm,
       } = this;
+       this.parse();
 
       if (!this.bankId)
         this.addNewBankAction({
